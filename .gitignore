@@ -3,3 +3,4 @@ bin
 .flexLibProperties
 .project
 .gitignore
+/.gitignore
