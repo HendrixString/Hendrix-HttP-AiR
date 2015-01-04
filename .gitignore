@@ -2,5 +2,4 @@ bin
 .actionScriptProperties
 .flexLibProperties
 .project
-.gitignore
-/.gitignore
+.settings
