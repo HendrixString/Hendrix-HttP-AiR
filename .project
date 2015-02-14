@@ -12,11 +12,7 @@
 		</buildCommand>
 	</buildSpec>
 	<natures>
-<<<<<<< HEAD
 		<nature>com.adobe.flexbuilder.project.aslibnature</nature>
-=======
-		<nature>com.adobe.flexbuilder.project.flexlibnature</nature>
->>>>>>> 5444fed9a2113088129e169ad14c51e2752d13ff
 		<nature>com.adobe.flexbuilder.project.actionscriptnature</nature>
 	</natures>
 </projectDescription>
