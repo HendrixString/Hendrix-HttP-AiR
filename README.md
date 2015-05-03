@@ -1,5 +1,5 @@
 # Hendrix-HttP
-a lightweight HTTP library for `ActionScript 3` / `Adobe AIR` inspired by `Square's OkHttp` Builder patterns and flavours
+a lightweight `HTTP` library for `ActionScript 3` / `Adobe AIR` inspired by `Square's OkHttp` Builder patterns and flavours
 for constructing a legit `HTTP` requests of all types.
 
 ## How to use
@@ -19,6 +19,8 @@ to your project, or import to your IDE of choice such as `Flash Builder 4.7`.
 - most important: quick and easy to use.
 
 ## Guide
+all of the demonstrations below show implementations based on the Google Glass Mirror RESTful API.
+
 ###### 1) Simple `GET` request
 
 ```
