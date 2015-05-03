@@ -112,24 +112,24 @@ public function uploadImage(image: ByteArray):void {
       var body:    RequestBody = null;
       var request: Request     = null;
       
-      body                     = RequestBody.create(image, "image/png");
+      body      = RequestBody.create(image, "image/png");
       
-      request                  = new RequestBuilder().url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
-                                                     .addQuery("access_token", _oauthToken)
-                                                     .POST(body).responseClass(Attachment)
-                                                     .build().execute(onComplete, onError);
+      request   = new RequestBuilder().url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
+                                      .addQuery("access_token", _oauthToken)
+                                      .POST(body).responseClass(Attachment)
+                                      .build().execute(onComplete, onError);
 }
 
 public function uploadImageFile(file: File):void {
       var body:    RequestBody = null;
       var request: Request     = null;
       
-      body                     = RequestBody.create(file, "image/png");
+      body     = RequestBody.create(file, "image/png");
       
-      request                  = new RequestBuilder().url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
-                                                     .addQuery("access_token", _oauthToken)
-                                                     .POST(body).responseClass(Attachment)
-                                                     .build().execute(onComplete, onError);
+      request  = new RequestBuilder().url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
+                                     .addQuery("access_token", _oauthToken)
+                                     .POST(body).responseClass(Attachment)
+                                     .build().execute(onComplete, onError);
 }
 
 private function onComplete(response: Attachment):void {
