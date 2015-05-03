@@ -105,6 +105,42 @@ private function onError(response: Object):void {
 
 ```
 
+###### 4) `POST` image request
+
+```
+public function uploadImage(image: ByteArray):void {
+      var body:    RequestBody = null;
+      var request: Request     = null;
+      
+      body                     = RequestBody.create(image, "image/png");
+      
+      request                  = new RequestBuilder().url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
+                                                     .addQuery("access_token", _oauthToken)
+                                                     .POST(body).responseClass(Attachment)
+                                                     .build().execute(onComplete, onError);
+}
+
+public function uploadImageFile(file: File):void {
+      var body:    RequestBody = null;
+      var request: Request     = null;
+      
+      body                     = RequestBody.create(file, "image/png");
+      
+      request                  = new RequestBuilder().url(SConfig.HOST + "/upload/mirror/v1/timeline" + "/" + _itemId + "/attachments")
+                                                     .addQuery("access_token", _oauthToken)
+                                                     .POST(body).responseClass(Attachment)
+                                                     .build().execute(onComplete, onError);
+}
+
+private function onComplete(response: Attachment):void {
+
+}
+
+private function onError(response: Object):void {
+
+}
+```
+
 ### Terms
 * completely free source code.
 * if you like it -> star or share it with others
