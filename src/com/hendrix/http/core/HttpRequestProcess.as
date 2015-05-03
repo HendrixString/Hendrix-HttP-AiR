@@ -197,7 +197,7 @@ package com.hendrix.http.core
 
     protected function ul_onError(event:IOErrorEvent):void
     {
-      trace(event.currentTarget.data);
+      trace(event.currentTarget.data);  
 
       dataResponse  = (event.currentTarget as URLLoader).data;
 
