@@ -2,10 +2,7 @@ package com.hendrix.http
 {
   import com.hendrix.http.core.HttpRequestProcess;
   
-  import flash.net.URLRequest;
-  import flash.net.URLRequestHeader;
   import flash.net.URLRequestMethod;
-  import flash.utils.ByteArray;
   
   /**
    * Request class, represents an HTTP Request. 
