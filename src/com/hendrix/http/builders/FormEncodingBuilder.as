@@ -42,7 +42,7 @@ package com.hendrix.http.builders
      */
     public function build():RequestBody
     {
-      return RequestBody.create("application/x-www-form-urlencoded", _query);
+      return RequestBody.create(_query, "application/x-www-form-urlencoded");
     }
     
   }
