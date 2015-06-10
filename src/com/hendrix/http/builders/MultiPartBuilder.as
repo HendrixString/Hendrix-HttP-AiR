@@ -80,7 +80,7 @@ package com.hendrix.http.builders
     /**
      * add a part to the request 
      * @param body the body of the part
-     * @param mimeHeaders the MIME headers of the part. one can use the <code>MimeBuilder</code> class to generate that string. decided to go here with string for ease of use of programmers.
+     * @param mimeHeaders additional mime headers for the part. one can use the <code>MimeBuilder</code> class to generate that string. decided to go here with string for ease of use of programmers.
      * @return <code>MultiPartBuilder</code> reference
      * @see com.hendrix.http.builders.MimeBuilder
      */

@@ -195,11 +195,13 @@ package com.hendrix.http.core
       notifyComplete(res);
     }
 
-    protected function ul_onError(event:IOErrorEvent):void
+    protected function ul_onError(event:IOErrorEvent = null):void
     {
-      trace(event.currentTarget.data);
-
-      dataResponse  = (event.currentTarget as URLLoader).data;
+      if(event != null) {
+        trace(event.currentTarget.data);
+  
+        dataResponse  = (event.currentTarget as URLLoader).data;
+      }
 
       notifyError(dataResponse);
     }
