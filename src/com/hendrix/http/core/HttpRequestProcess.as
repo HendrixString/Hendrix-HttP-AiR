@@ -6,7 +6,7 @@ package com.hendrix.http.core
   import com.hendrix.http.common.mime.MimeHeader;
   import com.hendrix.http.core.process.types.BaseProcess;
   import com.hendrix.http.utils.NetUtils;
-
+  
   import flash.events.Event;
   import flash.events.HTTPStatusEvent;
   import flash.events.IOErrorEvent;
@@ -14,7 +14,7 @@ package com.hendrix.http.core
   import flash.net.URLRequest;
   import flash.net.URLVariables;
   import flash.utils.Dictionary;
-
+  
   import org.osflash.vanilla.extract;
 
   /**
@@ -180,6 +180,8 @@ package com.hendrix.http.core
     {
       dataResponse  = (event.currentTarget as URLLoader).data;
 
+     // var i:String = (dataResponse as ByteArray).toString();
+      
       var res:Object = null;
 
       try{
@@ -191,8 +193,11 @@ package com.hendrix.http.core
       catch(err:Error){
         trace(err);
       }
-
-      notifyComplete(res);
+      
+      if(_request.flagReturnRequestAsResponse)
+        notifyComplete(_request);
+      else
+        notifyComplete(res);
     }
 
     protected function ul_onError(event:IOErrorEvent = null):void

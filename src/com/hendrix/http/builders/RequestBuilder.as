@@ -3,7 +3,6 @@ package com.hendrix.http.builders
   import com.hendrix.http.Request;
   import com.hendrix.http.RequestBody;
   
-  import flash.net.URLRequest;
   import flash.net.URLRequestHeader;
   import flash.net.URLRequestMethod;
   

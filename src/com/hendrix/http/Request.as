@@ -11,6 +11,9 @@ package com.hendrix.http
    */
   public class Request
   {
+    public var onComplete:Function = null;
+    public var onError:Function = null;
+    
     private var _method:        String      = URLRequestMethod.GET;
     private var _url:           String      = null;
     private var _body:          RequestBody = null;
@@ -18,14 +21,38 @@ package com.hendrix.http
     private var _queryParams:   Object      = null;
     private var _classResponse: Class       = null;
     
+    private var _data_aux:      Object      = null;
+    
+    /**
+     * set this to true to force the onComplete Handler to return this
+     * request as the reponse instead of the server response. 
+     */
+    private var _flagReturnRequestAsResponse:Boolean = false;
+    
     /**
      * the actual HTTP process, that uses this request to generate the actual HTTP request 
      */
     private var _httpRequest:HttpRequestProcess = null;
     
-    public var onComplete:Function = null;
-    public var onError:Function = null;
-    
+    /**
+     * set this to true to force the onComplete Handler to return this
+     * request as the reponse instead of the server response. 
+     */
+    public function get flagReturnRequestAsResponse():Boolean { return _flagReturnRequestAsResponse; }
+    public function set flagReturnRequestAsResponse(value:Boolean):void
+    {
+      _flagReturnRequestAsResponse = value;
+    }
+
+    /**
+     * pass some auxilary data with this object like <code>identifier</code> for the request
+     */
+    public function get dataAux():Object { return _data_aux; }
+    public function set dataAux(value:Object):void
+    {
+      _data_aux = value;
+    }
+
     public function get httpRequest():HttpRequestProcess
     {
       return _httpRequest;
