@@ -5,7 +5,8 @@ package com.hendrix.http
   import flash.net.URLRequestMethod;
   
   /**
-   * Request class, represents an HTTP Request. 
+   * <code>Request</code> class, represents an <code>HTTP</code> Request.
+   *  
    * @author Tomer Shalev
    * 
    */
@@ -24,18 +25,18 @@ package com.hendrix.http
     private var _data_aux:      Object      = null;
     
     /**
-     * set this to true to force the onComplete Handler to return this
+     * set this to true to force the <code>onComplete</code> Handler to return this
      * request as the reponse instead of the server response. 
      */
     private var _flagReturnRequestAsResponse:Boolean = false;
     
     /**
-     * the actual HTTP process, that uses this request to generate the actual HTTP request 
+     * the actual <code>HTTP</code> process, that uses this request to generate the actual <code>HTTP</code> request 
      */
     private var _httpRequest:HttpRequestProcess = null;
     
     /**
-     * set this to true to force the onComplete Handler to return this
+     * set this to <code>true</code> to force the onComplete Handler to return this
      * request as the reponse instead of the server response. 
      */
     public function get flagReturnRequestAsResponse():Boolean { return _flagReturnRequestAsResponse; }
@@ -67,7 +68,7 @@ package com.hendrix.http
     }
     
     /**
-     * Request class, represents an HTTP Request. 
+     * Request class, represents an <code>HTTP</code> Request. 
      */
     public function Request()
     {
@@ -79,7 +80,8 @@ package com.hendrix.http
     }
     
     /**
-     * execute the request, using it's HTTP carrier 
+     * execute the request, using it's <code>HTTP</code> carrier 
+     * 
      * @param $onComplete a callback function for succesful response 
      * @param $onError a callback function for error response
      * 
@@ -97,6 +99,7 @@ package com.hendrix.http
     
     /**
      * array of <code>URLRequestHeader</code> for the request.
+     * 
      * @see flash.net.URLRequestHeader.URLRequestHeader
      */
     public function get headers():Array { return _headers;  }
@@ -133,7 +136,8 @@ package com.hendrix.http
     }
     
     /**
-     * the http method of the request.
+     * the <code>HTTP</code> method of the request.
+     * 
      * @see flash.net.URLRequestMethod
      */
     public function get method():String { return _method; }
@@ -146,7 +150,7 @@ package com.hendrix.http
     }
     
     /**
-     * the query parameters. a key/value object 
+     * the query parameters. a <code>key/value</code> object 
      */
     public function get queryParams():Object  { return _queryParams;  }
     /**

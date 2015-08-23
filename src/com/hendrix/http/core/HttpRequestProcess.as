@@ -18,7 +18,8 @@ package com.hendrix.http.core
   import org.osflash.vanilla.extract;
 
   /**
-   * HTTP Request carrier
+   * <code>HTTP</code> Request carrier
+   * 
    * @author Tomer Shalev
    */
   public class HttpRequestProcess extends BaseProcess
@@ -37,11 +38,13 @@ package com.hendrix.http.core
     public var dataResponse:          Object        = null;
 
     /**
-     * process an HTTP Request object
-     * @param $request the Request object
+     * process an <code>HTTP</code> Request object
+     * 
+     * @param $request the <code>Request</code> object
+     * 
      * @see com.hendrix.http.Request
      */
-    public function HttpRequestProcess($request:Request = null, $id:  String  = null, $priorityKey: Object = 10)
+    public function HttpRequestProcess($request:Request = null, $id: String  = null, $priorityKey: Object = 10)
     {
       super($id, $priorityKey);
 
@@ -71,7 +74,8 @@ package com.hendrix.http.core
     }
 
     /**
-     * process the HTTP request
+     * process the <code>HTTP</code> request
+     * 
      * @param $onComplete a callback for successful response
      * @param $onError a callback for error response
      */
@@ -94,6 +98,10 @@ package com.hendrix.http.core
 
     }
 
+    /**
+     * @inheritDoc 
+     * 
+     */
     override public function dispose():void
     {
       super.dispose();
@@ -107,6 +115,10 @@ package com.hendrix.http.core
       dataResponse  = null;
     }
 
+    /**
+     * @inheritDoc 
+     * 
+     */
     override public function stop():void
     {
       super.stop();
@@ -123,9 +135,8 @@ package com.hendrix.http.core
       }
     }
 
-
     /**
-     * here prepare the HTTP request
+     * here prepare the <code>HTTP</code> request
      *
      */
     protected function prepareRequest():void
@@ -208,7 +219,10 @@ package com.hendrix.http.core
         dataResponse  = (event.currentTarget as URLLoader).data;
       }
 
-      notifyError(dataResponse);
+      if(_request.flagReturnRequestAsResponse)
+        notifyError(_request);
+      else
+        notifyError(dataResponse);
     }
 
     /**
