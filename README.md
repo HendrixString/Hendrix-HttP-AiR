@@ -23,7 +23,7 @@ All of the demonstrations below show implementations based on the `Google Glass 
 
 ###### 1) Simple `GET` request
 
-```
+```actionscript
 public function request():void
 {
     new RequestBuilder().GET()
@@ -44,7 +44,7 @@ private function onError(response: Object):void {
 
 ###### 2) `Form Encoding POST` request
 
-```
+```actionscript
 public function request():void {
     var body: RequestBody = new FormEncodingBuilder().add("access_token", _oauthToken)
                                                      .add("name", "value").build();
@@ -70,7 +70,7 @@ private function onError(response: Object):void {
 - if image is `null` than construct a `POST` request with `json` body (string body).
 - else construct a multipart request with two parts: a `json` part(string body), image part (`ByteArray` body).
 
-```
+```actionscript
 public function request(item: TimelineItem, image: ByteArray = null):void {
       var json_timeline:  String        = JSON.stringify(item);
       
@@ -109,7 +109,7 @@ private function onError(response: Object):void {
 
 ###### 4) `POST` image request
 
-```
+```actionscript
 public function uploadImage(image: ByteArray):void {
       var body:    RequestBody = null;
       var request: Request     = null;
